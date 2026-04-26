@@ -1,58 +1,92 @@
-<<<<<<< HEAD
-# excel-stroke-risk-analysis
-=======
-# Excel – Exploratory Analysis of Stroke Risk Factors
-**TL;DR:** 
-This project analyzes stroke risk factors using Excel.
-Age shows the strongest differentiation in stroke risk, with stroke prevalence increasing significantly among older age groups, especially individuals aged 80 and above. Other factors such as hypertension, heart disease, and glucose level show positive but weaker associations.
+# Stroke Risk Factor Analysis
+**Tool:** Microsoft Excel (Power Query · Pivot Table · Dashboard)  
+**Domain:** Healthcare  
+**Dataset:** [Stroke Prediction Dataset — Fedesoriano (Kaggle)](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset)
 
-## Problem
-Stroke is a major health issue influenced by multiple demographic, medical, and lifestyle factors.
-This analysis aims to identify which factors differentiate stroke risk the most using exploratory data analysis (EDA), rather than building a predictive model.
+---
 
-## Data
-- Source: [Stroke Prediction Dataset (by Fedesoriano)](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset)
+## Overview
 
-## Business Understanding
-1. Demographic Risk Factors
-  <br> - Does age influence stroke risk?
-  <br> - Which age groups have the highest stroke prevalence?
-  <br> - Is there a difference in stroke risk by gender?
-2. Medical Conditions
-  <br> - Is hypertension strongly associated with stroke?
-  <br> - Is heart disease associated with higher stroke risk?
-3. Clinical Measurements 
-  <br> - Is higher average glucose level associated with stroke?
-    
-## Data Understanding 
-1. Imported raw CSV
-2. Applied text to column
-3. Converted dataset into an Excel Table
-4. Checked data types and missing values
-5. Identified invalid or missing BMI and age values
+Stroke is a leading cause of disability and death worldwide. This project explores which demographic, medical, and lifestyle factors most strongly differentiate stroke risk — using exploratory data analysis (EDA) rather than predictive modeling.
 
-## Data Preparation
-1. Remove Duplicates
-2. Standardized data types
-3. Cleaned data
-4. Created calculated columns; Age Group; Glucose Level Group
-5. Loaded cleaned table back to Excel
+The goal: **identify actionable risk signals from real patient data**, presented through an interactive Excel dashboard.
 
-## Modelling
-1. Tool: Power Query (ETL)
-2. Built a single, clean analytical table
-3. Standardized column names and formats
-4. No Power Pivot relationships required (single-table model)
+---
 
-## Analysis
-1. Pivot Table used to calculate: Stroke prevalence (%); Stroke distribution by age group and other factors
-2. Pivot Chart
-3. Slicers for dynamic filtering (gender, residence, work type, age group)
-4. Column-based percentages used to compare stroke risk across groups
-5. Gap analysis performed to identify factors with the largest risk difference
+## Key Findings
 
-## Visualization
-1. KPI Cards: Total Observations, % Stroke (Overall), Age Group with Highest Stroke Risk, Factor with Highest Risk Gap
-2. Charts: Stroke prevalence by age group, Scatter plot (Age vs Stroke, with jitter)
-3. Dashboard: Single-page Excel dashboard and Interactive slicers (Gender, Hypertension, Heart Disease)
->>>>>>> 0ee3efb (organizing folder)
+| Factor | Insight |
+|---|---|
+| **Age** | Strongest differentiator. Stroke prevalence rises sharply after age 60, peaking in the 80+ group |
+| **Hypertension** | Patients with hypertension show noticeably higher stroke prevalence vs. those without |
+| **Heart Disease** | Positive association with stroke, though weaker than age |
+| **Avg Glucose Level** | Higher glucose levels correlate with increased stroke risk |
+| **Gender** | Minimal difference in stroke prevalence between male and female patients |
+
+> Age is the single strongest risk factor in this dataset. Hypertension and high glucose are secondary signals worth monitoring in clinical screening.
+
+---
+
+## Dashboard
+
+> 📸 *Screenshot dashboard menyusul — file Excel tersedia di folder `/reports`*
+
+**Dashboard features:**
+- KPI Cards: Total observations, overall stroke %, highest-risk age group, factor with largest risk gap
+- Stroke prevalence by age group (column chart)
+- Scatter plot: Age vs Stroke (with jitter for readability)
+- Interactive slicers: Gender, Hypertension, Heart Disease, Age Group
+
+---
+
+## Process
+
+**1. Data Understanding**
+- Imported raw CSV, applied text-to-columns, converted to Excel Table
+- Checked data types, identified missing BMI values and age anomalies
+
+**2. Data Preparation (Power Query)**
+- Removed duplicates
+- Standardized data types and column names
+- Cleaned invalid/missing BMI entries
+- Created calculated columns: `Age Group`, `Glucose Level Group`
+
+**3. Analysis (Pivot Table)**
+- Calculated stroke prevalence (%) per factor group
+- Gap analysis: identified factors with the largest difference in stroke rate between positive/negative groups
+- Used column-based percentages for fair comparison across uneven group sizes
+
+**4. Visualization**
+- Single-page interactive dashboard
+- Slicers for dynamic filtering across all charts
+
+---
+
+## Repo Structure
+
+```
+excel-stroke-risk-analysis/
+├── data/
+│   └── stroke_raw.csv          # Original dataset
+├── reports/
+│   └── stroke_analysis.xlsx    # Excel workbook (cleaned data + dashboard)
+└── README.md
+```
+
+---
+
+## Tools Used
+
+`Microsoft Excel` `Power Query` `Pivot Table` `Pivot Chart` `Slicers`
+
+---
+
+## Notes
+
+- This is an exploratory analysis — no predictive model was built
+- Dataset is imbalanced (stroke cases are minority class); prevalence % is used instead of raw counts for fair comparison
+- BMI missing values were removed rather than imputed to avoid introducing bias in a single-table EDA context
+
+---
+
+*Part of my [data portfolio](https://github.com/ramayogas/data-portofolio) — Rama Yogaswara*
