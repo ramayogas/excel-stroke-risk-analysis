@@ -33,7 +33,7 @@ The goal: **identify actionable risk signals from real patient data**, presented
 
 ## Dashboard
 
-> 📸 *Screenshot dashboard menyusul — file Excel tersedia di folder `/reports`*
+<img width="901" height="878" alt="image" src="https://github.com/user-attachments/assets/2551d4a8-37a1-4b3e-94cc-7115ecf9831c" />
 
 **Dashboard features:**
 - KPI Cards: Total observations, overall stroke %, highest-risk age group, factor with largest risk gap
@@ -71,9 +71,11 @@ The goal: **identify actionable risk signals from real patient data**, presented
 ```
 excel-stroke-risk-analysis/
 ├── data/
-│   └── stroke_raw.csv          # Original dataset
+│   └── raw_healthcare-dataset-stroke-data.csv          # Original dataset
+│   └── #.xlxs          # Clean dataset
 ├── reports/
-│   └── stroke_analysis.xlsx    # Excel workbook (cleaned data + dashboard)
+│   └── #.xlxs    # Excel workbook (cleaned data + dashboard)
+│   └── snapshot_strokeriskanalysis_age_focused_eda.pdf    # Snapshot dashboard
 └── README.md
 ```
 
