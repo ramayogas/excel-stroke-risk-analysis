@@ -72,9 +72,8 @@ The goal: **identify actionable risk signals from real patient data**, presented
 excel-stroke-risk-analysis/
 ├── data/
 │   └── raw_healthcare-dataset-stroke-data.csv          # Original dataset
-│   └── #.xlxs          # Clean dataset
 ├── reports/
-│   └── #.xlxs    # Excel workbook (cleaned data + dashboard)
+│   └── Stroke_Risk_Analysis_AgeFocused_EDA.xlxs    # Excel workbook (cleaned data + dashboard)
 │   └── snapshot_strokeriskanalysis_age_focused_eda.pdf    # Snapshot dashboard
 └── README.md
 ```
